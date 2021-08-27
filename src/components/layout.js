@@ -8,6 +8,7 @@ import {
   navLinkText
 } from './layout.module.css'
 
+const pathPrefix = "shpe_gpc_react/"
 const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
@@ -20,7 +21,7 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
+            <Link to={pathPrefix+"about"} className={navLinkText}>
               About
             </Link>
           </li>

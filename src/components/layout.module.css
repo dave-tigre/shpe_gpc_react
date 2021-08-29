@@ -1,11 +1,11 @@
 .container {
     margin: auto;
-    max-width: 500px;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
+    max-width: 1000px;
   }
   
   .heading {
-    color: rebeccapurple;
+    color: #001f5b;
   }
   .nav-links {
     display: flex;
@@ -17,4 +17,11 @@
   }
   .nav-link-text {
     color: black;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    color : gray;
+    font-weight: 700;
+    margin: 3rem 0;
   }

@@ -25,3 +25,17 @@
     font-weight: 700;
     margin: 3rem 0;
   }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .gatsby-resp-image-image {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }

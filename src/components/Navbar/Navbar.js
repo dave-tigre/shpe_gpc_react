@@ -1,120 +1,44 @@
 // Navbar.js
-
-import React, { useState } from "react"
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from "styled-components"
-import NavbarLinks from "./NavbarLinks"
-
-import {
-  logo
-} from './navbar.module.css'
+import { Container } from 'react-layout-components';
+import React, { Component } from 'react'; 
+import { Navbar, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
+import Image from "react-bootstrap/Image"
+import './navbar.module.css'
 import { Link } from "gatsby"
+import logoImage from "../../images/shpe_logo2.png"
 
-const Navigation = styled.nav`
-  height: 5vh;
-  display: flex;
-  background-color: #001f5b;
-  position: relative;
-  border-bottom: 2px solid #33333320;
-  margin: 0 auto;
-  padding-right: 0 5vw;
-  z-index: 2;
-  align-self: center;
 
-  @media (max-width: 768px) {
-    position: sticky;
-    height: 8vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    left: 0;
-  }
-`
 
-const Toggle = styled.div`
-  display: none;
-  height: 100%;
-  cursor: pointer;
-  padding: 0 10vw;
-
-  @media (max-width: 768px) {
-    display: flex;
-  }
-`
-
-const Navbox = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: flex-end;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    position: fixed;
-    width: 100%;
-    justify-content: flex-start;
-    padding-top: 10vh;
-    background-color: #fff;
-    transition: all 0.3s ease-in;
-    top: 8vh;
-    left: ${props => (props.open ? "-100%" : "0")};
-  }
-`
-
-const Hamburger = styled.div`
-  background-color: #111;
-  width: 30px;
-  height: 3px;
-  transition: all .3s linear;
-  align-self: center;
-  position: relative;
-  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
-
-  ::before,
-  ::after {
-    width: 30px;
-    height: 3px;
-    background-color: #111;
-    content: "";
-    position: absolute;
-    transition: all 0.3s linear;
-  }
-
-  ::before {
-    transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
-    top: -10px;
-  }
-
-  ::after {
-    opacity: ${props => (props.open ? "0" : "1")};
-    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
-    top: 10px;
-  }
-`
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
-
+const BootstrapNavbar = () => {
   return (
-    <Navigation>
-      <Link
-      to="/"
-      >
-        <StaticImage
-          className="logo"
-          alt="SHPE-GPC Logo2"
-          src="../../images/shpe_logo2.png"
-          layout="fixed"
-          height= {50}
-        />
-
-      </Link>
-      
-      <Navbox>
-          <NavbarLinks />
-        </Navbox>
-    </Navigation>
+    
+    <Navbar className ="nav" expand="lg" fixed="top" >
+          <Container>
+          <Navbar.Brand href="/">
+            <img
+              src={logoImage}
+              width="250"
+              height="40"
+              className="d-inline-block align-top"
+              alt="SHPE Logo"
+            />
+          </Navbar.Brand>
+        </Container>
+        <Nav>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
+            <NavDropdown title="Dropdown" id="nav-dropdown">
+            <NavDropdown.Item href="/history">History</NavDropdown.Item>
+            <NavDropdown.Item href="/board_of_directors">Board of Directors</NavDropdown.Item>
+            <NavDropdown.Item href="/our_mission">Our Mission</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/membership">Membership</Nav.Link>
+            <Nav.Link href="/sponsor">Sponsors</Nav.Link>
+        </Nav>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default BootstrapNavbar

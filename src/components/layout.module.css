@@ -1,41 +1,39 @@
 .container {
-    margin: auto;
-    font-family: "Lato", sans-serif;
-    max-width: 1000px;
-  }
-  
-  .heading {
-    color: #001f5b;
-  }
-  .nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-  }
-  .nav-link-item {
-    padding-right: 2rem;
-  }
-  .nav-link-text {
-    color: black;
-  }
+  margin: auto;
+  font-family: "Lato", sans-serif;
+  max-width: 1000px;
+  vertical-align: middle;
+}
 
-  .page-title {
-    font-size: 3rem;
-    color : gray;
-    font-weight: 700;
-    margin: 3rem 0;
-  }
+.heading {
+  color: #001f5b;
+}
 
-  a {
-    text-decoration: none !important;
-  }
+.page-title {
+  font-size: 3rem;
+  color: gray;
+  font-weight: 700;
+  margin: 3rem 0;
+}
 
-  .gatsby-resp-image-image {
-    width: 50%;
-    height: 50%;
-    margin: 0;
-    vertical-align: middle;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+a {
+  text-decoration: none !important;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+}
+
+.gatsby-resp-image-image {
+  width: 50%;
+  height: 50%;
+  margin: 0;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

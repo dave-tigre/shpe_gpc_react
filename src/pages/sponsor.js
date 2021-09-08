@@ -1,7 +1,10 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+
+import SponsorTable from "../components/sponsor_table"
+
+
 
 const SponsorPage = () => {
   return (
@@ -20,6 +23,7 @@ const SponsorPage = () => {
       <p>
         Thank you for being a Platinum Sponsor!
       </p>
+      <SponsorTable />
       
     </Layout>
   )

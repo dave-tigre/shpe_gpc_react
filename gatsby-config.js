@@ -21,6 +21,13 @@ module.exports = {
         path: `${__dirname}/board`,
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `student_chapter_logos`,
+        path: `${__dirname}/src/images/student_chapter_logos`,
+      }
+    },
     "gatsby-plugin-mdx",
     {
       resolve: `gatsby-transformer-remark`,

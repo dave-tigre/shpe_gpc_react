@@ -4,17 +4,17 @@
 }
 
 .nav {
-height: 5vh;
-display: flex;
-background-color: #001f5b;
-position: relative;
-border-bottom: 2px solid #33333320;
-margin: 0 auto;
-padding-right: 0 5vw;
-z-index: 2;
-align-self: center;
-align-items: center;
-color: white;
+    height: 5vh;
+    display: flex;
+    background-color: #001f5b;
+    position: relative;
+    border-bottom: 2px solid #33333320;
+    margin: 0 auto;
+    padding-right: 0 5vw;
+    z-index: 2;
+    align-self: center;
+    align-items: center;
+    color: white;
 }
 
 .nav-link{
@@ -22,12 +22,11 @@ color: white;
     padding: 0.5rem;
 }
 
-
 .nav-dropdown{
     color: white;
 }
 
 .nav-dropdown-link {
-    color:black
+    color:black;
 }
 

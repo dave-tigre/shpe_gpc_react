@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-events-js",
-    "path": "/events/",
-    "result": {"data":{"allFile":{"nodes":[{"name":"hispanic_heritage_month"},{"name":"noche_de_ciencias"},{"name":"shpe_first_blog"},{"name":"president"},{"name":"secretary"},{"name":"vice_president"},{"name":"events_director"},{"name":"treasurer"},{"name":"web_master"},{"name":"drexel_logo"},{"name":"penn_logo"},{"name":"penn_state_logo"},{"name":"rowan_logo"},{"name":"temple_logo"},{"name":"ud_logo"},{"name":"villanova_logo"}]}},"pageContext":{}},
-    "staticQueryHashes": ["3159585216"]}
+{"componentChunkName":"component---src-pages-events-js","path":"/events/","result":{"data":{"allFile":{"nodes":[{"name":"hispanic_heritage_month"},{"name":"noche_de_ciencias"},{"name":"shpe_first_blog"},{"name":"events_director"},{"name":"president"},{"name":"secretary"},{"name":"treasurer"},{"name":"vice_president"},{"name":"web_master"},{"name":"penn_logo"},{"name":"penn_state_logo"},{"name":"drexel_logo"},{"name":"rowan_logo"},{"name":"ud_logo"},{"name":"villanova_logo"},{"name":"temple_logo"}]}},"pageContext":{}},"staticQueryHashes":["3159585216"]}

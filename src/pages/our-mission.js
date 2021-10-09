@@ -1,7 +1,5 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
-import { Container } from 'react-layout-components';
 
 const OurMissionPage = () => {
   return (

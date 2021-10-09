@@ -1,22 +1,67 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Card from "react-bootstrap/Card";
 
-const BlogPage = ({ data }) => {
+
+const EventPage = ({ data }) => {
+
+  const today = new Date().getTime();
+  console.log(today);
+  const pastEvents = [];
+  const upcomingEvents = [];
+
+  data.allMdx.nodes.forEach(node => {
+    var eventDate = new Date(node.frontmatter.date);
+    var image = getImage(node.frontmatter.hero_image)
+    console.log(eventDate.getTime());
+    if (eventDate.getTime() < today) {
+      
+      pastEvents.push([node, image]);  
+    }
+    else {
+      upcomingEvents.push([node, image]);
+    }
+  }
+  )
   return (
-    <Layout pageTitle="My Blog Posts">
-      {
-        data.allMdx.nodes.map(node => (
-          <article key={node.id}>
-            <h2>
-              <Link to={`/events/${node.slug}`}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>
-            <p>Posted: {node.frontmatter.date}</p>
+    <Layout pageTitle="Events">
+        <h2>Upcoming Events</h2>
+        {
+        upcomingEvents.map((nodeA) => (
+          <article key={nodeA[0].id}>
+            <Card>
+              <Card.Body>
+                <Card.Title>{nodeA[0].frontmatter.title}</Card.Title>
+                <Card.Subtitle>{nodeA[0].frontmatter.date}</Card.Subtitle>
+                <GatsbyImage
+                  image={nodeA[1]}
+                  alt={nodeA[0].frontmatter.hero_image_alt}
+                  width={100}
+                />
+              </Card.Body>
+            </Card>
           </article>
         ))
-      }
+        }
+        <h2>Past Events</h2>
+        {
+        pastEvents.map((nodeA) => (
+          <article key={nodeA[0].id}>
+            <Card>
+              <Card.Body>
+                <Card.Title>{nodeA[0].frontmatter.title}</Card.Title>
+                <Card.Subtitle>{nodeA[0].frontmatter.date}</Card.Subtitle>
+                <GatsbyImage
+                  image={nodeA[1]}
+                  alt={nodeA[0].frontmatter.hero_image_alt}
+                />
+              </Card.Body>
+            </Card>
+          </article>
+        ))
+        }
     </Layout>
   )
 }
@@ -29,8 +74,16 @@ query {
   ) {
     nodes {
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
         title
+        date(formatString: "MMMM DD, YYYY")
+        hero_image_alt
+        hero_image_credit_link
+        hero_image_credit_text
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       id
       slug
@@ -39,4 +92,4 @@ query {
 }
 `
 
-export default BlogPage
+export default EventPage

@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 
 
-const BlogPost = ({ data }) => {
+const EventPost = ({ data }) => {
     const image = getImage(data.mdx.frontmatter.hero_image)
     return (
       <Layout pageTitle={data.mdx.frontmatter.title}>
@@ -41,4 +41,4 @@ const BlogPost = ({ data }) => {
     }
   `
   
-  export default BlogPost
+  export default EventPost

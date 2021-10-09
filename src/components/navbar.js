@@ -54,7 +54,7 @@ const BootstrapNavbar = () => {
             <NavDropdown.Item as={Link} href="/history">
               History
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} href="/board_of_directors">
+            <NavDropdown.Item as={Link} href="/board-of-directors">
               Board Of Directors
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} href="/our_mission">

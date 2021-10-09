@@ -11,22 +11,6 @@ import { Container } from 'react-bootstrap';
 const EventPage = ({ data }) => {
 
   const today = new Date().getTime();
-  const pastEvents = [];
-  const upcomingEvents = [];
-
-  data.allMdx.nodes.forEach(node => {
-    var eventDate = new Date(node.frontmatter.date);
-    var image = getImage(node.frontmatter.hero_image)
-    console.log(eventDate.getTime());
-    if (eventDate.getTime() < today) {
-      
-      pastEvents.push([node, image]);  
-    }
-    else {
-      upcomingEvents.push([node, image]);
-    }
-  }
-  )
   return (
     <Layout pageTitle="Events">
       <Container style={{alignItems:"center"}}>
@@ -35,46 +19,69 @@ const EventPage = ({ data }) => {
       <br></br>
       <Container>
         
-      
         <h2>Upcoming Events</h2>
         {
-        upcomingEvents.map((nodeA) => (
-          <article key={nodeA[0].id}>
-            <Card>
-              <Card.Body>
-                <Card.Title>{nodeA[0].frontmatter.title}</Card.Title>
-                <Card.Subtitle>{nodeA[0].frontmatter.date}</Card.Subtitle>
-                <GatsbyImage
-                  image={nodeA[1]}
-                  alt={nodeA[0].frontmatter.hero_image_alt}
-                  width={100}
-                />
-                <Card.Text>
-                <MDXRenderer>
-                  {data.mdx.body}
-                </MDXRenderer>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </article>
-        ))
+          data.allMdx.nodes.map(node => {
+            var eventDate = new Date(node.frontmatter.date);
+            const image = getImage(node.frontmatter.hero_image)
+            console.log(eventDate.getTime());
+            if (eventDate.getTime() >= today) {
+              
+              return (
+                <article key={node.id}>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>{node.frontmatter.title}</Card.Title>
+                    <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
+                    <GatsbyImage
+                      image={image}
+                      alt={node.frontmatter.hero_image_alt}
+                    />
+                    <Card.Text>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </article>
+              ) 
+            }
+            else {
+              return undefined;
+            }
+          },
+          
+          )
         }
         <h2>Past Events</h2>
         {
-        pastEvents.map((nodeA) => (
-          <article key={nodeA[0].id}>
-            <Card>
-              <Card.Body>
-                <Card.Title>{nodeA[0].frontmatter.title}</Card.Title>
-                <Card.Subtitle>{nodeA[0].frontmatter.date}</Card.Subtitle>
-                <GatsbyImage
-                  image={nodeA[1]}
-                  alt={nodeA[0].frontmatter.hero_image_alt}
-                />
-              </Card.Body>
-            </Card>
-          </article>
-        ))
+        data.allMdx.nodes.map(node => {
+          var eventDate = new Date(node.frontmatter.date);
+          const image = getImage(node.frontmatter.hero_image)
+          console.log(eventDate.getTime());
+          if (eventDate.getTime() < today) {
+            
+            return (
+              <article key={node.id}>
+              <Card>
+                <Card.Body>
+                  <Card.Title>{node.frontmatter.title}</Card.Title>
+                  <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
+                  <GatsbyImage
+                    image={image}
+                    alt={node.frontmatter.hero_image_alt}
+                  />
+                  <Card.Text>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </article>
+            ) 
+          }
+          else {
+            return undefined;
+          }
+        },
+        
+        )
         }
         </Container>
     </Layout>

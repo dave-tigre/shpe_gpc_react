@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { pageContainer, container } from "./layout.module.css";
 import Button from "react-bootstrap/Button";
 import {SSRProvider} from '@react-aria/ssr';
+
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {

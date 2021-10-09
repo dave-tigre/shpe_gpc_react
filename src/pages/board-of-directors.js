@@ -11,39 +11,37 @@ import Card from "react-bootstrap/Card";
 
 const cardTitleStyle = {textAlign:'center'};
 const BoardOfDirectorsPage = ({ data }) => {
-  const boardArray = [];
-  data.allMdx.nodes.forEach((node) => {
-    var heroImage = getImage(node.frontmatter.hero_image);
-    var image = (<GatsbyImage image={heroImage} alt={node.frontmatter.hero_image_alt}/>)
-    if (node.frontmatter.image !== ""){
-      image = (<Card.Img src={node.frontmatter.image} fluid={true} alt="Card image" />)
-    }
-    boardArray.push([node, image]);
-  })
   
   return (
     <Layout pageTitle="Board Of Directors">
       <h1 className="text-center">2021 Board of Directors</h1>
       <Row xs={1} md={3} className="g-4">
         {
-            boardArray.map((boardMember) => (
-              <Col>
+          data.allMdx.nodes.map((node) => {
+            const heroImage = getImage(node.frontmatter.hero_image);
+            var image = (<GatsbyImage image={heroImage} alt={node.frontmatter.hero_image_alt}/>)
+            if (node.frontmatter.image !== ""){
+              image = (<Card.Img src={node.frontmatter.image} fluid={true} alt="Card image" />)
+            }
+            return (
+            <Col>
                 <Card>
                   <Card.Body>
-                    {boardMember[1]}
-                    <Card.Title style={cardTitleStyle}>{boardMember[0].frontmatter.position}</Card.Title>
-                    <Card.Subtitle style={cardTitleStyle}>{boardMember[0].frontmatter.name}</Card.Subtitle>
+                    {image}
+                    <Card.Title style={cardTitleStyle}>{node.frontmatter.position}</Card.Title>
+                    <Card.Subtitle style={cardTitleStyle}>{node.frontmatter.name}</Card.Subtitle>
                     <Card.Text></Card.Text>
                     <Card.Text>
                       <Container>
                         <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" /> 
-                        <a href={boardMember[0].frontmatter.linkedin} style={{marginLeft: 1 + 'em'}}>{boardMember[0].frontmatter.name}</a>
+                        <a href={node.frontmatter.linkedin} style={{marginLeft: 1 + 'em'}}>{node.frontmatter.name}</a>
                       </Container>
                     </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-            ))
+            )
+          })
         }
       </Row>
 

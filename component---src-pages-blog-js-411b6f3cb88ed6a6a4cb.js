@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkshpe_gpc=self.webpackChunkshpe_gpc||[]).push([[7],{223:function(e,n,t){t.r(n);var a=t(7294),l=t(9690);n.default=function(e){var n=e.data;return a.createElement(l.Z,{pageTitle:"Blog"},a.createElement("ul",null,n.allFile.nodes.map((function(e){return a.createElement("li",{key:e.name},e.name)}))))}}}]);
-//# sourceMappingURL=component---src-pages-blog-js-411b6f3cb88ed6a6a4cb.js.map

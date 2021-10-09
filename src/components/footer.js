@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container } from "react-layout-components";
-import { container, footerButton } from "./footer.module.css";
+import { container, footerButton, footer } from "./footer.module.css";
 import Button from "react-bootstrap/Button"
 
 

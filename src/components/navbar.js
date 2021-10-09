@@ -51,13 +51,13 @@ const BootstrapNavbar = () => {
             variant={navDropdownDark}
             menuVariant={navDropdownDark}
           >
-            <NavDropdown.Item as={Link} href="/history">
+            <NavDropdown.Item  href="/history">
               History
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} href="/board-of-directors">
+            <NavDropdown.Item  href="/board-of-directors">
               Board Of Directors
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} href="/our_mission">
+            <NavDropdown.Item  href="/our-mission">
               Our Mission
             </NavDropdown.Item>
           </NavDropdown>

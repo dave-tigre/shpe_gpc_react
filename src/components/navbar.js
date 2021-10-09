@@ -2,11 +2,9 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import {
-  navbar,
   navbarDark,
   navLink,
   navDropdownDark,
-  navDropdownLink,
   navLogoContent,
   navLogoList,
   navFontawesome,
@@ -18,7 +16,6 @@ import "../utils/font-awesome";
 
 const BootstrapNavbar = () => {
   return (
-    navbar,
     (
       <Navbar
         className={navbarDark}
@@ -51,13 +48,13 @@ const BootstrapNavbar = () => {
             variant={navDropdownDark}
             menuVariant={navDropdownDark}
           >
-            <NavDropdown.Item  href="/history">
+            <NavDropdown.Item as={Link} href="/history">
               History
             </NavDropdown.Item>
-            <NavDropdown.Item  href="/board-of-directors">
+            <NavDropdown.Item  as={Link} href="/board-of-directors">
               Board Of Directors
             </NavDropdown.Item>
-            <NavDropdown.Item  href="/our-mission">
+            <NavDropdown.Item as={Link} href="/our-mission">
               Our Mission
             </NavDropdown.Item>
           </NavDropdown>

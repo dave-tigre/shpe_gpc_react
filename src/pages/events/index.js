@@ -3,12 +3,14 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Card from "react-bootstrap/Card";
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
+import Calendar from '../../components/calendar';
+import { Container } from 'react-bootstrap';
 
 const EventPage = ({ data }) => {
 
   const today = new Date().getTime();
-  console.log(today);
   const pastEvents = [];
   const upcomingEvents = [];
 
@@ -27,6 +29,13 @@ const EventPage = ({ data }) => {
   )
   return (
     <Layout pageTitle="Events">
+      <Container style={{alignItems:"center"}}>
+      <Calendar/>
+      </Container>
+      <br></br>
+      <Container>
+        
+      
         <h2>Upcoming Events</h2>
         {
         upcomingEvents.map((nodeA) => (
@@ -40,6 +49,11 @@ const EventPage = ({ data }) => {
                   alt={nodeA[0].frontmatter.hero_image_alt}
                   width={100}
                 />
+                <Card.Text>
+                <MDXRenderer>
+                  {data.mdx.body}
+                </MDXRenderer>
+                </Card.Text>
               </Card.Body>
             </Card>
           </article>
@@ -62,6 +76,7 @@ const EventPage = ({ data }) => {
           </article>
         ))
         }
+        </Container>
     </Layout>
   )
 }

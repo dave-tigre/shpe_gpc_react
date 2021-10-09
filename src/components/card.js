@@ -1,25 +1,16 @@
 import * as React from "react";
 import Card from "react-bootstrap/Card";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import blankHeadshot from "../images/blankHeadshot.png";
 
 const BootstrapCard = ({ imageSource, memberTitle, memberName, children }) => {
 
   
-  if (imageSource == "")
-  {
-    imageSource = {blankHeadshot};
-  }
-  const headShot = imageSource;
+  const image = getImage(imageSource)
 
   return (
     <Card>
-      <Card.Img
-        variant="top"
-        src={headShot}
-        className="img-fluid"
-        alt="Card image"
-      />
+      <Card.Img as={GatsbyImage} src={image} fluid={true} alt="Card image" />
       <Card.Body>
         <Card.Title>{memberTitle}</Card.Title>
         <Card.Subtitle>{memberName}</Card.Subtitle>

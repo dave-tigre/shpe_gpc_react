@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
 
-import anImage from "../images/carousel/aldia_event.png";
+import anImage from "../images/hhm2021.jpg";
 
 const BootstrapCarousel = ({ carouselHeight, imageHeight }) => {
   const staticImageHeight = imageHeight;
@@ -12,8 +12,8 @@ const BootstrapCarousel = ({ carouselHeight, imageHeight }) => {
         <Carousel>
           <Carousel.Item style={{ height: { carouselHeight } }}>
             <img
-              alt="SHPE-GPC Logo2"
-              src={anImage}
+              alt="Hispanic Heritage Month"
+              src={"../images/hhm_2021.jpeg"}
               className="img-fluid"
               height={staticImageHeight}
             />

@@ -1,0 +1,45 @@
+.logo {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar {
+  color: white;
+  background-color: #001f5b;
+
+}
+
+.navbar-dark {
+  color: white;
+  background-color: #001f5b;
+  height: 50px;
+  margin-bottom : 50px;
+}
+
+.nav-link {
+  color: white;
+  padding: 0.5rem;
+}
+
+.nav-dropdown-dark {
+  color: white;
+  background-color: white;
+}
+
+.nav-dropdown-link {
+  color: black;
+}
+
+.nav-logo-list {
+  right: 0;
+  display: inline;
+}
+.nav-logo-content {
+  list-style-type: none;
+  display: inline;
+  padding: 0.5rem;
+}
+
+.nav-fontawesome {
+  color: white;
+}

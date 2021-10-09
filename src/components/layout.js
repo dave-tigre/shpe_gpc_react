@@ -1,11 +1,10 @@
 import * as React from "react";
-import BootstrapNavbar from "./Navbar/navbar";
+import BootstrapNavbar from "./navbar";
 import { Container } from "react-layout-components";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { container, heading } from "./layout.module.css";
-import Footer from "./footer";
+import { useStaticQuery, graphql } from "gatsby";
+import { pageContainer, container, heading } from "./layout.module.css";
+import Button from "react-bootstrap/Button";
 
-const pathPrefix = "shpe_gpc_react/";
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -18,30 +17,30 @@ const Layout = ({ pageTitle, children }) => {
   `);
 
   return (
-    <Container>
+    <Container className={pageContainer}>
       <div style={{ marginBottom: "50px" }}>
         <BootstrapNavbar />
       </div>
-
-      <div className={container}>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-          crossorigin="anonymous"
-        />
+      <div>
         <title>
           {pageTitle} | {data.site.siteMetadata.title}
         </title>
-        <main>
+        <main className={container}>
           <div></div>
 
           {children}
         </main>
-        
-      </div>
-      <Footer />
 
+        <footer id="footer">
+          <a
+            href="https://forms.gle/sRWWVXZZgMMjayPZ9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Click Here to Subscribe To Our News Letter!</Button>
+          </a>
+        </footer>
+      </div>
     </Container>
   );
 };

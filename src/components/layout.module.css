@@ -1,8 +1,17 @@
+.page-container {
+  background-color: white;
+}
+
 .container {
   margin: auto;
-  font-family: "Lato", sans-serif;
-  max-width: 1000px;
+  font-family: "Helvetica Neue", sans-serif;
+  /* max-width: 1000px; */
+  width:60% ;
+  text-align: center;
   vertical-align: middle;
+  background: white;
+  overflow: auto;
+  flex: 1 1 auto;
 }
 
 .heading {
@@ -16,16 +25,35 @@
   margin: 3rem 0;
 }
 
+footer {
+  text-align: center;
+  padding: 3px;
+  color: white;
+  margin-bottom: 100px;
+  height: 100px;
+  background-color: #001f5b;
+  overflow: auto;
+}
+
 a {
   text-decoration: none !important;
 }
 
+p {
+  padding: 1%;
+  text-align: left;
+}
+
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 h2 {
-  font-family: "Lato", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .gatsby-resp-image-image {

@@ -1,4 +1,22 @@
 .container {
-    height : 100px;
+    max-height : 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
     background-color: #001f5b;
+    vertical-align: middle;
 }
+
+.footer-button {
+    vertical-align: middle;
+    background-color: orange;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+    margin-bottom: 100px;
+    background-color: #001f5b;
+  }

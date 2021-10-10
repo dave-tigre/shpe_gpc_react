@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-
+import { StaticImage } from 'gatsby-plugin-image';
+import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 const Frame = styled.div`
-  width: 400px;
+  width: 70%;
   border: 1px solid lightgrey;
   box-shadow: 2px 2px 2px #eee;
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: block;
-    margin-left: auto;
-    margin-right: auto 
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const Header = styled.div`
@@ -21,7 +24,7 @@ const Header = styled.div`
   color: white;
 `;
 
-const Button = styled.div`
+const MonthButton = styled.div`
   cursor: pointer;
 `;
 
@@ -45,17 +48,13 @@ const Day = styled.div`
       border: 1px solid #eee;
     `}
 
-  ${(props) =>
-    props.isSelected &&
-    css`
-      background-color: #eee;
-    `}
 `;
 
-const Calendar = () => {
+
+const Calendar = ({eventDates}) => {
   const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const DAYS_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  const DAYS_OF_THE_WEEK = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+  const DAYS_OF_THE_WEEK = ['SUN','MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
   const today = new Date();
@@ -73,7 +72,7 @@ const Calendar = () => {
   }, [date]);
 
   function getStartDayOfMonth(date) {
-    const startDate = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    const startDate = new Date(date.getFullYear(), date.getMonth(), 2).getDay();
     return startDate === 0 ? 7 : startDate;
   }
 
@@ -81,16 +80,37 @@ const Calendar = () => {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
 
+  function isEventDate(date){
+    var isEvent = false;
+    eventDates.forEach((event) => {
+      if ((date.getFullYear() === event.getFullYear()) && (date.getMonth() === event.getMonth()) && (date.getDate() === event.getDate()))
+      {
+        isEvent = true; 
+      }
+    }
+    )
+    return isEvent;
+  }
+
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Header as="h4">Name of Event</Popover.Header>
+      <Popover.Body>
+        <StaticImage src="../images/hhm2021.jpg" alt="SHPE HHM" />
+      </Popover.Body>
+    </Popover>
+    );
+
   const days = isLeapYear(year) ? DAYS_LEAP : DAYS;
 
   return (
     <Frame>
       <Header>
-        <Button onClick={() => setDate(new Date(year, month - 1, day))}>Prev</Button>
+        <MonthButton onClick={() => setDate(new Date(year, month - 1, day))}>Prev</MonthButton>
         <div>
           {MONTHS[month]} {year}
         </div>
-        <Button onClick={() => setDate(new Date(year, month + 1, day))}>Next</Button>
+        <MonthButton onClick={() => setDate(new Date(year, month + 1, day))}>Next</MonthButton>
       </Header>
       <Body>
         {DAYS_OF_THE_WEEK.map((d) => (
@@ -102,14 +122,19 @@ const Calendar = () => {
           .fill(null)
           .map((_, index) => {
             const d = index - (startDay - 2);
+            var dayContent = (d > 0 ? d : '');
+            if (isEventDate(new Date(year, month, d))) {
+                dayContent = (<OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                    <Button style={{backgroundColor:"#f26534", color:"black", borderColor:"transparent"}}>{d > 0 ? d : ''}</Button>
+                  </OverlayTrigger>)
+            }
             return (
               <Day
                 key={index}
-                isToday={d === today.getDate()}
-                isSelected={d === day}
+                isToday={year === today.getFullYear() && month === today.getMonth() && d === today.getDate()}
                 onClick={() => setDate(new Date(year, month, d))}
               >
-                {d > 0 ? d : ''}
+                {dayContent}
               </Day>
             );
           })}

@@ -4,17 +4,27 @@ import Layout from '../../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Card from "react-bootstrap/Card";
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-
+import SubscribeButton from "../../components/subscription_button";
 import Calendar from '../../components/calendar';
 import { Container } from 'react-bootstrap';
 
 const EventPage = ({ data }) => {
 
+  const eventDates = [];
+  data.allMdx.nodes.forEach((node) => {
+    var anEventDate = new Date(node.frontmatter.date);
+    eventDates.push(anEventDate);
+  });
+
   const today = new Date().getTime();
   return (
     <Layout pageTitle="Events">
-      <Container style={{alignItems:"center"}}>
-      <Calendar/>
+      <h2 style={{textAlign:"center"}}>SHPE-GPC Events</h2>
+      <Container style={{textAlign:"center"}}>
+        <p style={{textAlign:"center", padding:"0px"}}>Never miss an event by subscribing to our newsletter!</p>
+        <SubscribeButton/>
+        <br></br>
+      <Calendar eventDates={eventDates}/>
       </Container>
       <br></br>
       <Container>

@@ -24,6 +24,7 @@
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^1.13.2",
     "bootstrap": "^5.1.0",
+    "chokidar": "^3.5.2",
     "gatsby": "^3.12.1",
     "gatsby-plugin-image": "^1.12.0",
     "gatsby-plugin-mdx": "^2.12.0",

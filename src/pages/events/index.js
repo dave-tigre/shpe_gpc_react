@@ -7,13 +7,17 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SubscribeButton from "../../components/subscription_button";
 import Calendar from '../../components/calendar';
 import { Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const EventPage = ({ data }) => {
 
   const eventDates = [];
+  const eventFlyers = new Map();
   data.allMdx.nodes.forEach((node) => {
     var anEventDate = new Date(node.frontmatter.date);
     eventDates.push(anEventDate);
+    const image = getImage(node.frontmatter.hero_image);
+    eventFlyers.set(anEventDate,image);
   });
 
   const today = new Date().getTime();
@@ -30,6 +34,7 @@ const EventPage = ({ data }) => {
       <Container>
         
         <h2>Upcoming Events</h2>
+        <Row xs={1} md={3} className="g-4">
         {
           data.allMdx.nodes.map(node => {
             var eventDate = new Date(node.frontmatter.date);
@@ -38,8 +43,8 @@ const EventPage = ({ data }) => {
             if (eventDate.getTime() >= today) {
               
               return (
-                <article key={node.id}>
-                <Card>
+                  <Col>
+                  <Card>
                   <Card.Body>
                     <Card.Title>{node.frontmatter.title}</Card.Title>
                     <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
@@ -51,7 +56,7 @@ const EventPage = ({ data }) => {
                     </Card.Text>
                   </Card.Body>
                 </Card>
-              </article>
+                  </Col>
               ) 
             }
             else {
@@ -61,7 +66,9 @@ const EventPage = ({ data }) => {
           
           )
         }
+        </Row>
         <h2>Past Events</h2>
+        <Row xs={1} md={3} className="g-4">
         {
         data.allMdx.nodes.map(node => {
           var eventDate = new Date(node.frontmatter.date);
@@ -70,20 +77,22 @@ const EventPage = ({ data }) => {
           if (eventDate.getTime() < today) {
             
             return (
-              <article key={node.id}>
-              <Card>
-                <Card.Body>
-                  <Card.Title>{node.frontmatter.title}</Card.Title>
-                  <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
-                  <GatsbyImage
-                    image={image}
-                    alt={node.frontmatter.hero_image_alt}
-                  />
-                  <Card.Text>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </article>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>{node.frontmatter.title}</Card.Title>
+                    <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
+                    <div style={{display:"block", marginLeft:"auto",marginRight:"auto"}}> 
+                      <GatsbyImage
+                        image={image}
+                        alt={node.frontmatter.hero_image_alt}
+                      />
+                    </div>
+                    <Card.Text>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
             ) 
           }
           else {
@@ -93,6 +102,7 @@ const EventPage = ({ data }) => {
         
         )
         }
+        </Row>
         </Container>
     </Layout>
   )
@@ -113,7 +123,7 @@ query {
         hero_image_credit_text
         hero_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(height: 200)
           }
         }
       }

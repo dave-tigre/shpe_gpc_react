@@ -54,6 +54,19 @@ const BootstrapNavbar = () => {
             </Nav>
             <div style={{ float: "right", height:"100%" }}>
               <div className='row'>
+              <div className='col'>
+                  <a
+                  href="https://linktr.ee/SHPEGPC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  <FontAwesomeIcon
+                    icon={["fas", "link"]}
+                    size="lg"
+                    className={navFontawesome}
+                  />
+                </a>
+                </div>
                 <div className='col'>
                   <a
                   href="mailto: gpc.shpe@gmail.com"

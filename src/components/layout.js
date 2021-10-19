@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { pageContainer, container } from "./layout.module.css";
 import Button from "react-bootstrap/Button";
 import {SSRProvider} from '@react-aria/ssr';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,9 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <SSRProvider>
       <Container className='container-fluid'>
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
+        </head>
             <div style={{ marginBottom: "50px" }}>
               <BootstrapNavbar />
             </div>

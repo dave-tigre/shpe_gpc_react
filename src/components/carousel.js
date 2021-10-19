@@ -19,6 +19,9 @@ const BootstrapCarousel = () => {
               alt="Philly Skyline"
               src="../images/carousel/philadelphia.png"
               className="img-fluid"
+              placeholder="blurred"
+              layout="fixed"
+              width={500}
             />
           </Carousel.Item>
           <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
@@ -26,6 +29,9 @@ const BootstrapCarousel = () => {
               alt="SHPE National Convention 2018"
               src="../images/carousel/NationalConvention2018.png"
               className="img-fluid"
+              placeholder="blurred"
+              layout="fixed"
+              width={500}
             />
           </Carousel.Item>
           <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
@@ -33,6 +39,9 @@ const BootstrapCarousel = () => {
               alt="Trivia Night"
               src="../images/carousel/Trivia2.png"
               className="img-fluid"
+              placeholder="blurred"
+              layout="fixed"
+              width={500}
             />
           </Carousel.Item>
         </Carousel>

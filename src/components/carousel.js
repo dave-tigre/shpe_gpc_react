@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
-import {container, carousel, overlay, text, joinButton} from "./carousel.module.css"
+import {headerBanner, carousel, overlay, text, joinButton} from "./carousel.module.css"
 import Button from "react-bootstrap/Button"
 import { height } from "@mui/system";
 
@@ -45,9 +45,9 @@ const BootstrapCarousel = () => {
         </Carousel>
         
       </div>
-      <div className={text} style={{height:'500px'}}>
-        <h1 style={{fontFamily:"Impact"},{fontWeight:'bold'},{fontSize:'60px'}}>Leading Hispanics in STEM</h1>
-        <h2 style={{fontSize:'30px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.
+      <div className={text}>
+        <h1 className={headerBanner}>Leading Hispanics in STEM</h1>
+        <h2>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.
         Our Greater Philadelphia Chapter proudly works towards SHPE's mission of empowering professionals and the community</h2>
         <div className="col">
         <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">

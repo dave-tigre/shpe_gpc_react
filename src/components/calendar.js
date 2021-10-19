@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 const Frame = styled.div`
-  width: 70%;
+  width: 100%;
   border: 1px solid lightgrey;
   box-shadow: 2px 2px 2px #eee;
   margin-top: 5px;

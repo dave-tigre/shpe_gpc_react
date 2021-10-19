@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
 import {container, carousel, overlay, text, joinButton} from "./carousel.module.css"
 import Button from "react-bootstrap/Button"
+import { height } from "@mui/system";
 
 const BootstrapCarousel = () => {
   return (
@@ -14,7 +15,7 @@ const BootstrapCarousel = () => {
       <div className={carousel}>
       
         <Carousel>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
             <StaticImage
               alt="Philly Skyline"
               src="../images/carousel/philadelphia.png"
@@ -23,7 +24,7 @@ const BootstrapCarousel = () => {
               layout="fullWidth"
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
             <StaticImage
               alt="SHPE National Convention 2018"
               src="../images/carousel/NationalConvention2018.png"
@@ -32,7 +33,7 @@ const BootstrapCarousel = () => {
               layout="fullWidth"
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
             <StaticImage
               alt="Trivia Night"
               src="../images/carousel/Trivia2.png"
@@ -44,7 +45,7 @@ const BootstrapCarousel = () => {
         </Carousel>
         
       </div>
-      <div className={text} >
+      <div className={text} style={{height:'500px'}}>
         <h1 style={{fontFamily:"Impact"},{fontWeight:'bold'},{fontSize:'60px'}}>Leading Hispanics in STEM</h1>
         <h2 style={{fontSize:'30px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.
         Our Greater Philadelphia Chapter proudly works towards SHPE's mission of empowering professionals and the community</h2>
@@ -54,7 +55,6 @@ const BootstrapCarousel = () => {
             Join Us
           </Button>
         </a>
-
         </div>
       </div>
     </div>

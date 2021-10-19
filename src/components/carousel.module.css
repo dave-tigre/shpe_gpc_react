@@ -27,13 +27,13 @@
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
   }
 
 .join-button {
   text-align: center;
   background-color: #dd3e27 !important;
   margin: 5px !important;
+  font-family: "Helvetica Neue", sans-serif;
 }
   
   

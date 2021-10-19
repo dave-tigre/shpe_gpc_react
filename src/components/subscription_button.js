@@ -5,7 +5,7 @@ const SubscribeButton = () => {
   return (
     <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
         <Button variant="primary">
-          Click Here to Subscribe To Our News Letter!
+          Click Here to Subscribe To Our Newsletter!
         </Button>
     </a>
   );

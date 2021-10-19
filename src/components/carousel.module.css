@@ -66,9 +66,10 @@
 
 
   .text {
-    position: absolute;
-    top: 0%;
+    position: relative;
+    top: 50%;
     left: 50%;
+    width: 50%;
     transform: translate(-50%, -200%);
     text-align: left;
   }

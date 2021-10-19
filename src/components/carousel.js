@@ -1,66 +1,72 @@
-import React, { Component } from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import React, {Component} from "react";
+import {StaticImage} from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
-import {headerBanner, bodyBanner, carousel, overlay, text, joinButton} from "./carousel.module.css"
+import {
+    container,
+    headerBanner,
+    bodyBanner,
+    carousel,
+    overlay,
+    text,
+    joinButton
+} from "./carousel.module.css"
 import Button from "react-bootstrap/Button"
-import { height } from "@mui/system";
+import { Container } from "react-bootstrap";
 
 const BootstrapCarousel = () => {
-  return (
-    
-    <div className= 'container'>
-    <div className={overlay}>
-      
-    </div>
-      <div className={carousel}>
-      
-        <Carousel>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
-            <StaticImage
-              alt="Philly Skyline"
-              src="../images/carousel/philadelphia.png"
-              className="img-fluid"
-              placeholder="blurred"
-              height={500}
-            />
-          </Carousel.Item>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
-            <StaticImage
-              alt="SHPE National Convention 2018"
-              src="../images/carousel/NationalConvention2018.png"
-              className="img-fluid"
-              placeholder="blurred"
-              height={500}
-            />
-          </Carousel.Item>
-          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
-            <StaticImage
-              alt="Trivia Night"
-              src="../images/carousel/Trivia2.png"
-              className="img-fluid"
-              placeholder="blurred"
-              height={500}
-            />
-          </Carousel.Item>
-        </Carousel>
+    return (
+        <Container>
+            <div className={overlay}></div>
 
-        
+            <div className={carousel}>
 
-      </div>
-      <div className={text}>
-        <h1 className={headerBanner}>Leading Latinos in STEM</h1>
-        <h2 className={bodyBanner}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
-        <div className="col">
-        <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
-          <Button className={joinButton}>
-            Join Us
-          </Button>
-        </a>
-      </div>
-      
-      </div>
-    </div>
-  );
+                <Carousel>
+                    <Carousel.Item style={
+                        {
+                            height: '500px',
+                            textAlign: 'center'
+                        }
+                    }>
+                        <StaticImage alt="Philly Skyline" src="../images/carousel/philadelphia.png" className="img-fluid" placeholder="blurred"
+                            height={500}/>
+                    </Carousel.Item>
+                    <Carousel.Item style={
+                        {
+                            height: '500px',
+                            textAlign: 'center'
+                        }
+                    }>
+                        <StaticImage alt="SHPE National Convention 2018" src="../images/carousel/NationalConvention2018.png" className="img-fluid" placeholder="blurred"
+                            height={500}/>
+                    </Carousel.Item>
+                    <Carousel.Item style={
+                        {
+                            height: '500px',
+                            textAlign: 'center'
+                        }
+                    }>
+                        <StaticImage alt="Trivia Night" src="../images/carousel/Trivia2.png" className="img-fluid" placeholder="blurred"
+                            height={500}/>
+                    </Carousel.Item>
+                </Carousel>
+
+
+            </div>
+            <div className={container}>
+              <div className={text}>
+                  <h1 className={headerBanner}>Leading Latinos in STEM</h1>
+                  <h2 className={bodyBanner}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
+                  <div className="col">
+                      <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
+                          <Button className={joinButton}>
+                              Join Us
+                          </Button>
+                      </a>
+                  </div>
+              </div>
+            </div>
+        </Container>
+    );
 };
 
 export default BootstrapCarousel;

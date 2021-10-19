@@ -3,11 +3,15 @@ import Layout from '../components/layout'
 import  'bootstrap/dist/css/bootstrap.min.css';
 import { StaticImage } from 'gatsby-plugin-image';
 import BootstrapCarousel from '../components/carousel';
+import { height } from '@mui/system';
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home">
-      <BootstrapCarousel />
+      <div style={{height:"500px"}}>
+        <BootstrapCarousel />
+      </div>
+      
       <StaticImage
           alt="SHPE-GPC Logo"
           src="../images/shpe_logo.jpg"

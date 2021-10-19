@@ -58,7 +58,7 @@ const BootstrapCarousel = () => {
                   <h2 className={bodyBanner}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
                   <div className="col">
                       <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
-                          <Button className={joinButton}>
+                          <Button size="md" className={joinButton}>
                               Join Us
                           </Button>
                       </a>

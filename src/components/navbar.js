@@ -19,7 +19,7 @@ const BootstrapNavbar = () => {
   return (
     (
       <Navbar expand="lg" className={navbarDark}  >
-        <Container style={{color:'white'}}>
+        <Container>
         <Navbar.Brand>
           <Link to="/">
             <img
@@ -32,7 +32,7 @@ const BootstrapNavbar = () => {
           </Link>
         </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className={navbarDark}>
             <Nav className="me-auto">
               <Nav.Link className={navLink} as={Link} href="/">Home</Nav.Link>
               <Nav.Link className={navLink} as={Link} href="/events">Events</Nav.Link>

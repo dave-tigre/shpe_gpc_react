@@ -4,6 +4,7 @@ module.exports = {
     title: "SHPE - GPC",
   },
   plugins: [
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

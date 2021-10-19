@@ -65,10 +65,12 @@
 
 
 .text{
-    position: absolute;
-    padding-top: 5%;
+    position: fixed;
+    top : 0;
     left: 50%;
     color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
   }
 
 .join-button {

@@ -18,7 +18,7 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar className={navbarDark} variant={navbarDark}>
+      <Navbar expand="lg" variant={navbarDark} >
         <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -34,8 +34,8 @@ const BootstrapNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} href="/">Home</Nav.Link>
-              <Nav.Link as={Link} href="/events">Events</Nav.Link>
+              <Nav.Link className={navLink} as={Link} href="/">Home</Nav.Link>
+              <Nav.Link className={navLink} as={Link} href="/events">Events</Nav.Link>
               <NavDropdown
                 title={<span style={{ color: "white" }}>About Us</span>}
                 id={navDropdownDark}
@@ -52,8 +52,8 @@ const BootstrapNavbar = () => {
                   Our Mission
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} href="/membership">Membership</Nav.Link>
-              <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
+              <Nav.Link className={navLink} as={Link} href="/membership">Membership</Nav.Link>
+              <Nav.Link className={navLink} as={Link} href="/sponsor">Sponsors</Nav.Link>
             </Nav>
             <div style={{ float: "right" }}>
           <ul className={navLogoList}>

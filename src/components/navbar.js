@@ -18,8 +18,8 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar expand="lg" variant={navbarDark} >
-        <Container>
+      <Navbar expand="lg" className={navbarDark}  >
+        <Container style={{color:'white'}}>
         <Navbar.Brand>
           <Link to="/">
             <img

@@ -15,31 +15,31 @@ const BootstrapCarousel = () => {
       <div className={carousel}>
       
         <Carousel>
-          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="Philly Skyline"
               src="../images/carousel/philadelphia.png"
               className="img-fluid"
               placeholder="blurred"
-              layout="fullWidth"
+              height={500}
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="SHPE National Convention 2018"
               src="../images/carousel/NationalConvention2018.png"
               className="img-fluid"
               placeholder="blurred"
-              layout="fullWidth"
+              height={500}
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'100%', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="Trivia Night"
               src="../images/carousel/Trivia2.png"
               className="img-fluid"
               placeholder="blurred"
-              layout="fullWidth"
+              height={500}
             />
           </Carousel.Item>
         </Carousel>

@@ -8,7 +8,7 @@ import { height } from '@mui/system';
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home">
-      <div style={{height:"500px"}}>
+      <div style={{display:"block",height:"500px"}}>
         <BootstrapCarousel />
       </div>
       

@@ -18,7 +18,7 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar expand="lg" variant='dark' style={{backgroundColor:'#001f5b'}} >
+      <Navbar expand="lg" variant='dark' style={{backgroundColor:'#001f5b'},{width:'100%'}} >
         <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -52,7 +52,7 @@ const BootstrapNavbar = () => {
               <Nav.Link as={Link} href="/membership">Membership</Nav.Link>
               <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
             </Nav>
-            <div style={{ float: "right" }}>
+            <div style={{ float: "right", height:"100%",  listStyleType:"none" }}>
           <ul className={navLogoList}>
             <li className={navLogoContent}>
               <a

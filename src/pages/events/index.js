@@ -12,12 +12,13 @@ import { Row, Col } from 'react-bootstrap';
 const EventPage = ({ data }) => {
 
   const eventDates = [];
-  const eventFlyers = new Map();
+  const eventFlyers = [];
   data.allMdx.nodes.forEach((node) => {
     var anEventDate = new Date(node.frontmatter.date);
     eventDates.push(anEventDate);
     const image = getImage(node.frontmatter.hero_image);
-    eventFlyers.set(anEventDate,image);
+    const eventName = node.frontmatter.title;
+    eventFlyers.push([anEventDate,eventName,image]);
   });
 
   const today = new Date().getTime();
@@ -28,7 +29,7 @@ const EventPage = ({ data }) => {
         <p style={{textAlign:"center", padding:"0px"}}>Never miss an event by subscribing to our newsletter!</p>
         <SubscribeButton/>
         <br></br>
-      <Calendar eventDates={eventDates}/>
+      <Calendar eventDates={eventDates} eventFlyers={eventFlyers}/>
       </Container>
       <br></br>
       <Container>
@@ -44,14 +45,16 @@ const EventPage = ({ data }) => {
               
               return (
                   <Col>
-                  <Card>
+                  <Card style={{height:'100%'}}>
                   <Card.Body>
                     <Card.Title>{node.frontmatter.title}</Card.Title>
                     <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
+                    <div style={{textAlign:'center'}}>
                     <GatsbyImage
                       image={image}
                       alt={node.frontmatter.hero_image_alt}
                     />
+                    </div>
                     <Card.Text>
                     </Card.Text>
                   </Card.Body>
@@ -82,7 +85,7 @@ const EventPage = ({ data }) => {
                   <Card.Body>
                     <Card.Title>{node.frontmatter.title}</Card.Title>
                     <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
-                    <div style={{display:"block", marginLeft:"auto",marginRight:"auto"}}> 
+                    <div style={{textAlign:'center'}}>
                       <GatsbyImage
                         image={image}
                         alt={node.frontmatter.hero_image_alt}

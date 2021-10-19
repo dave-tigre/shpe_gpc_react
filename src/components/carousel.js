@@ -45,7 +45,7 @@ const BootstrapCarousel = () => {
         
       </div>
       <div className={text}>
-        <h1 style={{fontWeight:'bold'},{fontSize:'50px'}}>Leading Hispanics in STEM</h1>
+        <h1 style={{fontWeight:'bold'},{fontSize:'60px'}}>Leading Hispanics in STEM</h1>
         <h2 style={{fontSize:'30px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
         <h2 style={{fontSize:'30px'}}>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
         <div className="col">

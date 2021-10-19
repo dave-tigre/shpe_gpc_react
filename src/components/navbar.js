@@ -17,12 +17,8 @@ import "../utils/font-awesome";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar
-        className={navbarDark}
-        variant={navbarDark}
-        
-        fixed="top"
-      >
+      <Navbar className={navbarDark} bg="light" expand="lg">
+        <Container>
         <Navbar.Brand>
           <Link to="/">
             <img
@@ -34,38 +30,31 @@ const BootstrapNavbar = () => {
             />
           </Link>
         </Navbar.Brand>
-
-        <Nav className="me-auto">
-          <Link to="/" className={navLink}>
-            Home
-          </Link>
-          <Link to="/events" className={navLink}>
-            Events
-          </Link>
-          <NavDropdown
-            title={<span style={{ color: "white" }}>About Us</span>}
-            id={navDropdownDark}
-            variant={navDropdownDark}
-            menuVariant={navDropdownDark}
-          >
-            <NavDropdown.Item as={Link} href="/history">
-              History
-            </NavDropdown.Item>
-            <NavDropdown.Item  as={Link} href="/board-of-directors">
-              Board Of Directors
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} href="/our-mission">
-              Our Mission
-            </NavDropdown.Item>
-          </NavDropdown>
-          <Link to="/membership" className={navLink}>
-            Membership
-          </Link>
-          <Link to="/sponsor" className={navLink}>
-            Sponsors
-          </Link>
-        </Nav>
-        <div style={{ float: "right" }}>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={Link} href="/">Home</Nav.Link>
+              <Nav.Link as={Link} href="/events">Events</Nav.Link>
+              <NavDropdown
+                title={<span style={{ color: "white" }}>About Us</span>}
+                id={navDropdownDark}
+                variant={navDropdownDark}
+                menuVariant={navDropdownDark}
+              >
+                <NavDropdown.Item as={Link} href="/history">
+                  History
+                </NavDropdown.Item>
+                <NavDropdown.Item  as={Link} href="/board-of-directors">
+                  Board Of Directors
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} href="/our-mission">
+                  Our Mission
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link as={Link} href="/membership">Membership</Nav.Link>
+              <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
+            </Nav>
+            <div style={{ float: "right" }}>
           <ul className={navLogoList}>
             <li className={navLogoContent}>
               <a
@@ -121,6 +110,8 @@ const BootstrapNavbar = () => {
             </li>
           </ul>
         </div>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
     )
   );

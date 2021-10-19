@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { pageContainer, container } from "./layout.module.css";
 import Button from "react-bootstrap/Button";
 import {SSRProvider} from '@react-aria/ssr';
+import SubscribeButton from "./subscription_button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = ({ pageTitle, children }) => {
@@ -39,16 +40,11 @@ const Layout = ({ pageTitle, children }) => {
                 {children}
               </main>
 
-              <footer id="footer">
-                <a
-                  href="https://forms.gle/sRWWVXZZgMMjayPZ9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button>Click Here to Subscribe To Our News Letter!</Button>
-                </a>
-              </footer>
+              
             </div>
+            <footer id="footer">
+                <SubscribeButton />
+              </footer>
       </Container>
     </SSRProvider>
     

@@ -65,9 +65,9 @@
 
 
 .text{
+    position: absolute;
     top: 40%;
     left: 50%;
-    right: 50%;
     color: white;
   }
 

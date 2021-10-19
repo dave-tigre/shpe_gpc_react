@@ -8,7 +8,7 @@ import { height } from "@mui/system";
 const BootstrapCarousel = () => {
   return (
     
-    <div style={{height:"100%", width:"100%"}}>
+    <div className= 'container'>
     <div className={overlay}>
       
     </div>
@@ -43,7 +43,9 @@ const BootstrapCarousel = () => {
             />
           </Carousel.Item>
         </Carousel>
+
         
+
       </div>
       <div className={text}>
         <h1 className={headerBanner}>Leading Latinos in STEM</h1>
@@ -54,7 +56,8 @@ const BootstrapCarousel = () => {
             Join Us
           </Button>
         </a>
-        </div>
+      </div>
+      
       </div>
     </div>
   );

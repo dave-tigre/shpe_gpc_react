@@ -18,7 +18,7 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar className={navbarDark} bg="light" expand="lg">
+      <Navbar className={navbarDark} variant={navbarDark}>
         <Container>
         <Navbar.Brand>
           <Link to="/">

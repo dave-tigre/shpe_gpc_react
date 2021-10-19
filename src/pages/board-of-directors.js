@@ -15,7 +15,7 @@ const BoardOfDirectorsPage = ({ data }) => {
   return (
     <Layout pageTitle="Board Of Directors">
       <h1 className="text-center">2021 Board of Directors</h1>
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={4} className="g-4 align-items-stretch">
         {
           data.allMdx.nodes.map((node) => {
             const heroImage = getImage(node.frontmatter.hero_image);
@@ -26,15 +26,32 @@ const BoardOfDirectorsPage = ({ data }) => {
             return (
             <Col>
                 <Card>
-                  <Card.Body>
+                  <Card.Body style={{height:'100%'}}>
                     {image}
                     <Card.Title style={cardTitleStyle}>{node.frontmatter.position}</Card.Title>
                     <Card.Subtitle style={cardTitleStyle}>{node.frontmatter.name}</Card.Subtitle>
                     <Card.Text></Card.Text>
-                    <Card.Text>
-                      <Container>
-                        <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" /> 
-                        <a href={node.frontmatter.linkedin} style={{marginLeft: 1 + 'em'}}>{node.frontmatter.name}</a>
+                    <Card.Text style={{fontSize:'16px'}}>
+                      <Container style={{margin:'5px'}}>
+                          <div className='row'>
+                          <div className='col'>
+                            <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" /> 
+                            <a href={node.frontmatter.linkedin} style={{marginLeft: 1 + 'em'}} target="_blank" rel="noopener noreferrer">
+                              {node.frontmatter.name}
+                            </a>
+                          </div>
+                          </div>
+                          <div className='row'>
+                          <div className='col'>
+                            <FontAwesomeIcon icon={["fas", "envelope"]} size="lg" /> 
+                            <a href={node.frontmatter.linkedin} style={{marginLeft: 1 + 'em'}} 
+                            href="mailto: gpc.shpe@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                              {node.frontmatter.email}
+                            </a>
+                          </div>
+                          </div>
                       </Container>
                     </Card.Text>
                   </Card.Body>
@@ -62,6 +79,7 @@ query {
         name
         index
         linkedin
+        email
         image
         hero_image_alt
         hero_image_credit_link

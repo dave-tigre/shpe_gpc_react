@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Card from "react-bootstrap/Card";
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SubscribeButton from "../../components/subscription_button";
 import Calendar from '../../components/calendar';
 import { Container } from 'react-bootstrap';
@@ -17,10 +16,10 @@ const EventPage = ({ data }) => {
   data.allMdx.nodes.forEach((node) => {
     var anEventDate = new Date(node.frontmatter.date);
     eventDates.push(anEventDate);
-    const image = getImage(node.frontmatter.hero_image);
+    const eventImage = getImage(node.frontmatter.hero_image);
     const eventName = node.frontmatter.title;
     const eventLink = node.frontmatter.link;
-    eventFlyers.push([anEventDate,eventName,image,eventLink]);
+    eventFlyers.push([anEventDate,eventName,eventImage,eventLink]);
   });
 
   const today = new Date().getTime();
@@ -43,11 +42,11 @@ const EventPage = ({ data }) => {
           data.allMdx.nodes.map(node => {
             var eventDate = new Date(node.frontmatter.date);
             const image = getImage(node.frontmatter.hero_image);
-            const link = node.frontmatter.link;
+            const eventLink = node.frontmatter.link;
             var button = (<div></div>);
-            if (link != ""){
+            if (eventLink !== ""){
               button = (
-              <a href={link} target="_blank" rel="noopener noreferrer">
+              <a href={eventLink} target="_blank" rel="noopener noreferrer">
               <Button size="md">
                   Click here to sign up!
               </Button>
@@ -62,7 +61,7 @@ const EventPage = ({ data }) => {
                     <Card.Title>{node.frontmatter.title}</Card.Title>
                     <Card.Subtitle>{node.frontmatter.date}</Card.Subtitle>
                     <div style={{textAlign:'center'}}>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <a href={eventLink} target="_blank" rel="noopener noreferrer">
                     <GatsbyImage
                       image={image}
                       alt={node.frontmatter.hero_image_alt}

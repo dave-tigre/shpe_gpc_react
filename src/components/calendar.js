@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 const Frame = styled.div`
-  width: 100%;
+  width: 80%;
   border: 1px solid lightgrey;
   box-shadow: 2px 2px 2px #eee;
   margin-top: 5px;
@@ -98,14 +97,32 @@ const Calendar = ({eventDates, eventFlyers}) => {
 
     var eventImage = undefined;
     var eventTitle = "";
-      eventFlyers.forEach((item) => {
-        if ((date.getFullYear() === item[0].getFullYear()) && (date.getMonth() === item[0].getMonth()) && (date.getDate() === item[0].getDate()))
+    var eventLink = "";
+    var eventButton = (<div></div>);
+    eventFlyers.forEach((item) => {
+      if ((date.getFullYear() === item[0].getFullYear()) && (date.getMonth() === item[0].getMonth()) && (date.getDate() === item[0].getDate()))
+      {
+        eventTitle = item[1];
+        eventImage = item[2];
+        if ((date.getFullYear() >= today.getFullYear()) && (date.getMonth() >= today.getMonth()) && (date.getDate() >= today.getMonth()))
         {
-          eventTitle = item[1]
-          eventImage = item[2];
+          eventLink = item[3];
         }
+        
       }
-      );
+    }
+    );
+
+    if (eventLink !== "")
+    {
+      eventButton = (
+        <a href={eventLink} target="_blank" rel="noopener noreferrer">
+        <Button size="md">
+            Click here to sign up!
+        </Button>
+        </a>);
+    }
+
     return (
     <Popover id="popover-basic">
       <Popover.Header as="h4">{eventTitle}</Popover.Header>
@@ -114,6 +131,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
           image={eventImage}
           alt=""
         />
+        {eventButton}
       </Popover.Body>
     </Popover>
     );

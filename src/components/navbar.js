@@ -53,60 +53,60 @@ const BootstrapNavbar = () => {
               <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
             </Nav>
             <div style={{ float: "right", height:"100%" }}>
-          <ul className={navLogoList}>
-            <li className={navLogoContent}>
-              <a
-                href="mailto: gpc.shpe@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={["fas", "envelope"]}
-                  size="lg"
-                  className={navFontawesome}
-                />
-              </a>
-            </li>
-            <li className={navLogoContent}>
-              <a
-                href="https://www.linkedin.com/company/shpe-gpc/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={["fab", "linkedin"]}
-                  size="lg"
-                  className={navFontawesome}
-                />
-              </a>
-            </li>
-            <li className={navLogoContent}>
-              <a
+              <div className='row'>
+                <div className='col'>
+                  <a
+                  href="mailto: gpc.shpe@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  <FontAwesomeIcon
+                    icon={["fas", "envelope"]}
+                    size="lg"
+                    className={navFontawesome}
+                  />
+                </a>
+                </div>
+                <div className='col'>
+                  <a
+                  href="https://www.linkedin.com/company/shpe-gpc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  <FontAwesomeIcon
+                    icon={["fab", "linkedin"]}
+                    size="lg"
+                    className={navFontawesome}
+                  />
+                </a>
+                </div>
+                <div className='col'>
+                <a
                 href="https://www.instagram.com/shpegpc/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={["fab", "instagram"]}
-                  size="lg"
-                  className={navFontawesome}
-                />
-              </a>
-            </li>
-            <li className={navLogoContent}>
-              <a
-                href="https://www.facebook.com/groups/shpegpc/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={["fab", "facebook"]}
-                  size="lg"
-                  className={navFontawesome}
-                />
-              </a>
-            </li>
-          </ul>
+                >
+                  <FontAwesomeIcon
+                    icon={["fab", "instagram"]}
+                    size="lg"
+                    className={navFontawesome}
+                  />
+                </a>
+                </div>
+                <div className='col'>
+                  <a
+                  href="https://www.facebook.com/groups/shpegpc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  <FontAwesomeIcon
+                    icon={["fab", "facebook"]}
+                    size="lg"
+                    className={navFontawesome}
+                  />
+                </a>
+                </div>
+              </div>
         </div>
           </Navbar.Collapse>
         </Container>

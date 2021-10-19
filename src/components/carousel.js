@@ -14,7 +14,7 @@ const BootstrapCarousel = () => {
       <div className={carousel}>
       
         <Carousel>
-          <Carousel.Item style={{ height:'400px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="Philly Skyline"
               src="../images/carousel/philadelphia.png"
@@ -23,7 +23,7 @@ const BootstrapCarousel = () => {
               layout="fullWidth"
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'400px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="SHPE National Convention 2018"
               src="../images/carousel/NationalConvention2018.png"
@@ -32,7 +32,7 @@ const BootstrapCarousel = () => {
               layout="fullWidth"
             />
           </Carousel.Item>
-          <Carousel.Item style={{ height:'400px', textAlign:'center'}}>
+          <Carousel.Item style={{ height:'500px', textAlign:'center'}}>
             <StaticImage
               alt="Trivia Night"
               src="../images/carousel/Trivia2.png"
@@ -45,10 +45,9 @@ const BootstrapCarousel = () => {
         
       </div>
       <div className={text}>
-        <h1 style={{fontWeight:'bold'},{fontSize:'30px'}}>Leading Hispanics in STEM</h1>
-        <h2 style={{fontSize:'15px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
-        <br></br>
-        <h2 style={{fontSize:'15px'}}>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
+        <h1 style={{fontWeight:'bold'},{fontSize:'50px'}}>Leading Hispanics in STEM</h1>
+        <h2 style={{fontSize:'30px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
+        <h2 style={{fontSize:'30px'}}>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
         <div className="col">
         <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
           <Button className={joinButton}>

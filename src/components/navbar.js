@@ -13,6 +13,7 @@ import { Link } from "gatsby";
 import logoImage from "../images/shpe_logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../utils/font-awesome";
+import { Container } from "react-bootstrap";
 
 const BootstrapNavbar = () => {
   return (

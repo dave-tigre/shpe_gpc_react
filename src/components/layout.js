@@ -19,7 +19,7 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <SSRProvider>
-      <Container className={pageContainer}>
+      <Container className='container-fluid'>
             <div style={{ marginBottom: "50px" }}>
               <BootstrapNavbar />
             </div>

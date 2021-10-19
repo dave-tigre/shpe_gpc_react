@@ -20,7 +20,7 @@ const BootstrapNavbar = () => {
       <Navbar
         className={navbarDark}
         variant={navbarDark}
-        expand="lg"
+        
         fixed="top"
       >
         <Navbar.Brand>

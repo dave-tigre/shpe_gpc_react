@@ -5,7 +5,7 @@ import SubscribeButton from "./subscription_button";
 const Footer = () => {
  
   return (
-      <footer id="footer">
+      <footer id="footer" style={{height:'100%'}}>
         <SubscribeButton/>
       </footer>
   );

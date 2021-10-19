@@ -1,5 +1,5 @@
 .container {
-    max-height : 500px;
+    
     margin-top: 50px;
     margin-bottom: 50px;
     
@@ -17,6 +17,7 @@ footer {
     text-align: center;
     padding: 3px;
     color: white;
+    height:max-content;
     margin-bottom: 400px;
     background-color: #001f5b;
   }

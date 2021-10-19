@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    height: 100%;
+  }
+
+.carousel {
+    opacity: 0.3;
+}
+
+.overlay {
+    position: absolute ;
+    right :0;
+    width: 100% ;
+    height: 500px ;
+    background-color: #001f5b;
+    opacity: 0.9;
+    display: block ;
+  }
+
+.text{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+  
+  

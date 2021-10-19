@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
 import {container, carousel, overlay, text, joinButton} from "./carousel.module.css"
-import SubscribeButton from "./subscription_button";
+import Button from "react-bootstrap/Button"
 
 const BootstrapCarousel = () => {
   return (

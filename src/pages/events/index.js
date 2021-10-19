@@ -29,6 +29,7 @@ const EventPage = ({ data }) => {
         <p style={{textAlign:"center", padding:"0px"}}>Never miss an event by subscribing to our newsletter!</p>
         <SubscribeButton/>
         <br></br>
+        <p style={{padding:'0%'}}>Click on the highlighted dates in the calendar to learn more.</p>
       <Calendar eventDates={eventDates} eventFlyers={eventFlyers}/>
       </Container>
       <br></br>

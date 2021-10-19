@@ -45,10 +45,10 @@ const BootstrapCarousel = () => {
         
       </div>
       <div className={text}>
-        <h1>Leading Hispanics in STEM</h1>
-        <h2>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
+        <h1 style={{fontWeight:'bold'},{fontSize:'30px'}}>Leading Hispanics in STEM</h1>
+        <h2 style={{fontSize:'15px'}}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
         <br></br>
-        <h2>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
+        <h2 style={{fontSize:'15px'}}>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
         <div className="col">
         <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
           <Button className={joinButton}>

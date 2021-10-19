@@ -18,7 +18,7 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar expand="lg" className={navbarDark}  >
+      <Navbar collapseOnSelect expand="lg" variant='dark' style={{backgroundColor:'#001f5b'}} >
         <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -32,10 +32,10 @@ const BootstrapNavbar = () => {
           </Link>
         </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className={navbarDark}>
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link className={navLink} as={Link} href="/">Home</Nav.Link>
-              <Nav.Link className={navLink} as={Link} href="/events">Events</Nav.Link>
+              <Nav.Link as={Link} href="/">Home</Nav.Link>
+              <Nav.Link as={Link} href="/events">Events</Nav.Link>
               <NavDropdown
                 title={<span style={{ color: "white" }}>About Us</span>}
                 id={navDropdownDark}
@@ -52,8 +52,8 @@ const BootstrapNavbar = () => {
                   Our Mission
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link className={navLink} as={Link} href="/membership">Membership</Nav.Link>
-              <Nav.Link className={navLink} as={Link} href="/sponsor">Sponsors</Nav.Link>
+              <Nav.Link as={Link} href="/membership">Membership</Nav.Link>
+              <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
             </Nav>
             <div style={{ float: "right" }}>
           <ul className={navLogoList}>

@@ -13,13 +13,11 @@
   color: white;
   background-color: #001f5b;
   height: 50px;
-  margin-bottom : 50px;
-  display:inline-flex ;
+  width: 100%;
 }
 
 .nav-link {
   color: white;
-  padding: 0.5rem;
 }
 
 .nav-dropdown-dark {

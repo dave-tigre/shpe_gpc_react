@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
-import {container, carousel, overlay, text} from "./carousel.module.css"
+import {container, carousel, overlay, text, joinButton} from "./carousel.module.css"
 import SubscribeButton from "./subscription_button";
 
 const BootstrapCarousel = () => {
@@ -44,7 +44,19 @@ const BootstrapCarousel = () => {
         </Carousel>
         
       </div>
-      <div className={text}><SubscribeButton/>
+      <div className={text}>
+        <h1>Leading Hispanics in STEM</h1>
+        <h2>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
+        <br></br>
+        <h2>SHPE-GPC is proudly working towards empowering professionals and the community</h2>
+        <div className="col">
+        <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
+          <Button className={joinButton}>
+            Join Us
+          </Button>
+        </a>
+
+        </div>
       </div>
     </div>
   );

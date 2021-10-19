@@ -18,7 +18,7 @@ import { Container } from "react-bootstrap";
 const BootstrapNavbar = () => {
   return (
     (
-      <Navbar collapseOnSelect expand="lg" variant='dark' style={{backgroundColor:'#001f5b'}} >
+      <Navbar expand="lg" variant='dark' style={{backgroundColor:'#001f5b'}} >
         <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -37,10 +37,7 @@ const BootstrapNavbar = () => {
               <Nav.Link as={Link} href="/">Home</Nav.Link>
               <Nav.Link as={Link} href="/events">Events</Nav.Link>
               <NavDropdown
-                title={<span style={{ color: "white" }}>About Us</span>}
-                id={navDropdownDark}
-                variant={navDropdownDark}
-                menuVariant={navDropdownDark}
+                title="About Us"
               >
                 <NavDropdown.Item as={Link} href="/history">
                   History

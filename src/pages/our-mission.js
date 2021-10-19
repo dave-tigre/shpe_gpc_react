@@ -33,6 +33,9 @@ const OurMissionPage = () => {
                   <li>Continuous Improvement</li>
               </ul>
         <h1>The Pillars of SHPE</h1>
+        
+        <div style={{textAlign:'center'}}>
+          
         <div className='row'>
           <div className='col'>
             <h6>Professional Development</h6>
@@ -109,6 +112,7 @@ const OurMissionPage = () => {
           <p>Activities geared towards the career and management development with the specific intent of upward mobility and/or advancement within the members' career.</p>
           </div>
         </div>
+      </div>
 
     </Layout>
   )

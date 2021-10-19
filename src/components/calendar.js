@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 const Frame = styled.div`
   width: 70%;
@@ -78,7 +79,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
 
   function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-  }
+  };
 
   function isEventDate(date){
     var isEvent = false;
@@ -90,16 +91,32 @@ const Calendar = ({eventDates, eventFlyers}) => {
     }
     )
     return isEvent;
-  }
+  };
 
-  const popover = (
+  const popover = (date) => {
+
+    var eventImage = undefined;
+    var eventTitle = "";
+      eventFlyers.forEach((item) => {
+        if ((date.getFullYear() === item[0].getFullYear()) && (date.getMonth() === item[0].getMonth()) && (date.getDate() === item[0].getDate()))
+        {
+          eventTitle = item[1]
+          eventImage = item[2];
+        }
+      }
+      );
+    return (
     <Popover id="popover-basic">
-      <Popover.Header as="h4">Name of Event</Popover.Header>
-      <Popover.Body>
-        <StaticImage src="../images/hhm2021.jpg" alt="SHPE HHM" />
+      <Popover.Header as="h4">{eventTitle}</Popover.Header>
+      <Popover.Body style={{textAlign:'center'}}>
+        <GatsbyImage
+          image={eventImage}
+          alt=""
+        />
       </Popover.Body>
     </Popover>
     );
+  };
 
   const days = isLeapYear(year) ? DAYS_LEAP : DAYS;
 
@@ -124,8 +141,8 @@ const Calendar = ({eventDates, eventFlyers}) => {
             const d = index - (startDay - 2);
             var dayContent = (d > 0 ? d : '');
             if (isEventDate(new Date(year, month, d))) {
-                dayContent = (<OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                    <Button style={{backgroundColor:"#f26534", color:"black", borderColor:"transparent"}}>{d > 0 ? d : ''}</Button>
+                dayContent = (<OverlayTrigger trigger="click" placement="right" overlay={popover(new Date(year, month, d))}>
+                    <Button style={{backgroundColor:"#ffdab9", color:"black", borderColor:"transparent", width:'70%', textAlign:'center'}}>{d > 0 ? d : ''}</Button>
                   </OverlayTrigger>)
             }
             return (

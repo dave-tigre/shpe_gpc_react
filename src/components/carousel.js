@@ -68,14 +68,24 @@ const BootstrapCarousel = () => {
               <div className={text}>
                   <h1 className={headerBanner}>Leading Latinos in STEM</h1>
                   <h2 className={bodyBanner}>SHPE is the nation’s largest association dedicated to fostering Hispanic leadership in the STEM field.</h2>
-                  <div className="col">
-                      <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
-                          <Button size="md" className={joinButton}>
-                              Join Us
-                          </Button>
-                      </a>
-                  </div>
-              </div>
+                 
+                    <div className='row no-gutters'>
+                        <div className="col-2">
+                            <a href="https://forms.gle/sRWWVXZZgMMjayPZ9" target="_blank" rel="noopener noreferrer">
+                                <Button size="md" className={joinButton}>
+                                    Join Us
+                                </Button>
+                            </a>
+                        </div>
+                        <div className="col-3">
+                            <a href="https://www.shpe.org/" target="_blank" rel="noopener noreferrer">
+                                <Button size="md" className={joinButton}>
+                                    SHPE National
+                                </Button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Container>
     );

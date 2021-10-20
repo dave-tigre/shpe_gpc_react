@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `student_chapter_logos`,
-        path: `${__dirname}/src/images/student_chapter_logos`,
+        name: `localchapters`,
+        path: `${__dirname}/localchapters`,
       }
     },
     "gatsby-plugin-mdx",

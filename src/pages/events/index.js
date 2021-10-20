@@ -25,7 +25,7 @@ const EventPage = ({ data }) => {
   const today = new Date().getTime();
   return (
     <Layout pageTitle="Events">
-      <h2 style={{textAlign:"center"}}>SHPE-GPC Events</h2>
+      <h1 style={{textAlign:"center"}}>SHPE-GPC Events</h1>
       <Container style={{textAlign:"center"}}>
         <p style={{textAlign:"center", margin:"0px"}}>Subscribe and never miss an event!</p>
         <SubscribeButton/>

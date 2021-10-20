@@ -45,7 +45,6 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
             <p> Activities geared at the soft skills and/or technical skills breadth requirement of the members' current workforce competencies.</p>
           </div>
@@ -57,7 +56,6 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
           <p> Activities geared towards developing leadership skills of members, ensuring a solid foundation of leaders within the executive board and the successful transition of officers.</p>
           </div>
@@ -69,7 +67,6 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
           <p>Activities promoting recruitment/retention of members, promote a solid foundation for the chapter itself in terms of funding, presence and/or influence in the local community.</p>
           </div>
@@ -81,7 +78,6 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
           <p>Activities specifically promoting STEM awareness in the K-12 community and/or supporting the local community.</p>
           </div>
@@ -95,7 +91,6 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
           <p>Activities promoting professional and local student SHPE chapter interaction and mentorship by the SHPE professional chapter.</p>
           </div>
@@ -107,13 +102,11 @@ const OurMissionPage = () => {
               className="img-fluid"
               placeholder="blurred"
               height={200}
-              width={200}
             />
           <p>Activities geared towards the career and management development with the specific intent of upward mobility and/or advancement within the members' career.</p>
           </div>
         </div>
       </div>
-
     </Layout>
   )
 }

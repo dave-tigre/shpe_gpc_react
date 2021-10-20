@@ -3,9 +3,9 @@ import Layout from '../components/layout'
 import { Container } from 'react-layout-components';
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import { graphql } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/font-awesome';
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Card from "react-bootstrap/Card";
 
@@ -18,6 +18,7 @@ const BoardOfDirectorsPage = ({ data }) => {
       <Row xs={1} md={4} className="g-4 align-items-stretch">
         {
           data.allMdx.nodes.map((node) => {
+            const mailTo = "mailto: ";
             const heroImage = getImage(node.frontmatter.hero_image);
             var image = (<GatsbyImage image={heroImage} alt={node.frontmatter.hero_image_alt}/>)
             if (node.frontmatter.image !== ""){
@@ -44,8 +45,9 @@ const BoardOfDirectorsPage = ({ data }) => {
                           <div className='row'>
                           <div className='col'>
                             <FontAwesomeIcon icon={["fas", "envelope"]} size="lg" /> 
-                            <a href={node.frontmatter.linkedin} style={{marginLeft: 1 + 'em'}} 
-                            href="mailto: gpc.shpe@gmail.com"
+                            <a 
+                            style={{marginLeft: 0.8 + 'em'}} 
+                            href={mailTo.concat(node.frontmatter.email)}
                             target="_blank"
                             rel="noopener noreferrer">
                               {node.frontmatter.email}

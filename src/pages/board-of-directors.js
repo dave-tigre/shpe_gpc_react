@@ -22,7 +22,7 @@ const BoardOfDirectorsPage = ({ data }) => {
             const heroImage = getImage(node.frontmatter.hero_image);
             var image = (<GatsbyImage image={heroImage} alt={node.frontmatter.hero_image_alt}/>)
             if (node.frontmatter.image !== ""){
-              image = (<Card.Img src={node.frontmatter.image} fluid={true} alt="Card image" />)
+              image = (<Card.Img src={node.frontmatter.image} alt="Card image" />)
             }
             return (
             <Col>

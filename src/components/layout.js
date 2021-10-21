@@ -31,7 +31,7 @@ const Layout = ({ pageTitle, children }) => {
             </div>
             <div>
               <title>
-                {pageTitle} | {data.site.siteMetadata.title}
+                {pageTitle}|{data.site.siteMetadata.title}
               </title>
               <main className={container}>
                 <div></div>

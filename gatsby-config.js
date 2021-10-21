@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/shpe_gpc_react",
+  pathPrefix: "",
   siteMetadata: {
     title: "SHPE - GPC",
   },

@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Button } from 'react-bootstrap';
 import { Container } from 'react-layout-components';
 import SponsorTable from "../components/sponsor_table";
+import { Link } from 'gatsby';
 
 const SponsorPage = () => {
   return (
@@ -38,16 +39,15 @@ const SponsorPage = () => {
           </a>
           .
         </p>
-        <a 
-          href={"sponsorshipPacket.pdf"} 
+        <Link
+          to="/sponsorshipPacket.pdf"
           target="_blank" 
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+          >
           <Button variant="primary" style={{marginBottom:'20px'}}>
             SHPE-GPC Sponsorship Packet
           </Button>
-        </a>
-        
-        
+        </Link>
         <SponsorTable />
       </Container>
     </Layout>

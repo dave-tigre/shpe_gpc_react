@@ -40,7 +40,7 @@ const SponsorPage = () => {
           .
         </p>
         <a
-          to="/sponsorshipPacket.pdf"
+          href="/sponsorshipPacket.pdf"
           target="_blank" 
           rel="noopener noreferrer"
           >

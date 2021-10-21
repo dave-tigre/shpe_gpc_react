@@ -4,7 +4,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Button } from 'react-bootstrap';
 import { Container } from 'react-layout-components';
 import SponsorTable from "../components/sponsor_table";
-import { Link } from 'gatsby';
 
 const SponsorPage = () => {
   return (

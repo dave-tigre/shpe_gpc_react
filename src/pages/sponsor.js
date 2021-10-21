@@ -39,7 +39,7 @@ const SponsorPage = () => {
           </a>
           .
         </p>
-        <Link
+        <a
           to="/sponsorshipPacket.pdf"
           target="_blank" 
           rel="noopener noreferrer"
@@ -47,7 +47,7 @@ const SponsorPage = () => {
           <Button variant="primary" style={{marginBottom:'20px'}}>
             SHPE-GPC Sponsorship Packet
           </Button>
-        </Link>
+        </a>
         <SponsorTable />
       </Container>
     </Layout>

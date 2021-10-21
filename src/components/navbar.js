@@ -2,11 +2,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import {
-  navbarDark,
-  navLink,
-  navDropdownDark,
-  navLogoContent,
-  navLogoList,
   navFontawesome,
 } from "./navbar.module.css";
 import { Link } from "gatsby";

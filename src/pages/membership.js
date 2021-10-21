@@ -8,7 +8,6 @@ import '../utils/font-awesome';
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const cardTitleStyle = {textAlign:'center',};
 const MembershipPage = ({data}) => {
     return (
         <Layout pageTitle="Membership">
@@ -22,7 +21,7 @@ const MembershipPage = ({data}) => {
             SHPE National Membership
             </Button>
             </a>
-            <p></p>
+            <br></br>
             <h1>SHPE For Professionals</h1>
             <p>
                 Professional members of SHPE utilize SHPE resources to find greater success in their careers and beyond. Whether a member is an entry-level engineer or an experienced executive, professional development options are available to meet that member’s needs. Professional members also have tremendous opportunities to network with colleagues and corporate partners, take on SHPE chapter leadership positions, and give back to their communities through various outreach initiatives.
@@ -59,13 +58,13 @@ const MembershipPage = ({data}) => {
                     rel="noopener noreferrer">
                         {node.frontmatter.email}
                     </a>
-                    <p></p>
                 </Container>
               </Col>
             )
           })
         }
       </Row>
+      <br></br>
         </Container>
         </Layout>
 

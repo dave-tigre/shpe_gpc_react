@@ -3,8 +3,6 @@ import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Container } from 'react-bootstrap'
 
-
-
 const HistoryPage = () => {
   return (
     <Layout pageTitle="History">

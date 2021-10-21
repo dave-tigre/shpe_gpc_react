@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {StaticImage} from "gatsby-plugin-image";
 import Carousel from "react-bootstrap/Carousel";
 import {

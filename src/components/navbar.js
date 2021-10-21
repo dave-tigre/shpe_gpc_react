@@ -29,23 +29,23 @@ const BootstrapNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} href="/">Home</Nav.Link>
-              <Nav.Link as={Link} href="/events">Events</Nav.Link>
+              <Nav.Link  href="/">Home</Nav.Link>
+              <Nav.Link  href="/events">Events</Nav.Link>
               <NavDropdown
                 title="About Us"
               >
-                <NavDropdown.Item as={Link} href="/history">
+                <NavDropdown.Item  href="/history">
                   History
                 </NavDropdown.Item>
-                <NavDropdown.Item  as={Link} href="/board-of-directors">
+                <NavDropdown.Item   href="/board-of-directors">
                   Board Of Directors
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} href="/our-mission">
+                <NavDropdown.Item  href="/our-mission">
                   Our Mission
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} href="/membership">Membership</Nav.Link>
-              <Nav.Link as={Link} href="/sponsor">Sponsors</Nav.Link>
+              <Nav.Link  href="/membership">Membership</Nav.Link>
+              <Nav.Link  href="/sponsor">Sponsors</Nav.Link>
             </Nav>
             <div style={{ float: "right", height:"100%" }}>
               <div className='row'>

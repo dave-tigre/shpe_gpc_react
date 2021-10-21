@@ -5,8 +5,6 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 const Frame = styled.div`
   width: 80%;
-  border: 1px solid lightgrey;
-  box-shadow: 2px 2px 2px #eee;
   margin-top: 5px;
   margin-bottom: 5px;
   display: block;
@@ -31,6 +29,8 @@ const MonthButton = styled.div`
 const Body = styled.div`
   width: 100%;
   height: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 2px #eee;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -141,6 +141,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
 
   return (
     <Frame>
+      <p style={{margin:'0px'}}>Click on the highlighted dates in the calendar to learn more.</p>
       <Header>
         <MonthButton onClick={() => setDate(new Date(year, month - 1, day))}>Prev</MonthButton>
         <div>

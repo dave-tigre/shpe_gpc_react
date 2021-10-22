@@ -2,15 +2,9 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
-const Frame = styled.div`
-  width: 80%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-`;
+import { Button, Container, OverlayTrigger, Popover } from 'react-bootstrap';
+import { frame, calendarButton } from "./calendar.module.css"
+
 
 const Header = styled.div`
   font-size: 18px;
@@ -33,6 +27,7 @@ const Body = styled.div`
   box-shadow: 2px 2px 2px #eee;
   display: flex;
   flex-wrap: wrap;
+  min-height: 200px
 `;
 
 const Day = styled.div`
@@ -140,7 +135,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
   const days = isLeapYear(year) ? DAYS_LEAP : DAYS;
 
   return (
-    <Frame>
+    <Container className={frame}>
       <p style={{margin:'0px'}}>Click on the highlighted dates in the calendar to learn more.</p>
       <Header>
         <MonthButton onClick={() => setDate(new Date(year, month - 1, day))}>Prev</MonthButton>
@@ -162,7 +157,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
             var dayContent = (d > 0 ? d : '');
             if (isEventDate(new Date(year, month, d))) {
                 dayContent = (<OverlayTrigger trigger="click" placement="right" overlay={popover(new Date(year, month, d))}>
-                    <Button style={{backgroundColor:"#ffdab9", color:"black", borderColor:"transparent", width:'70%', textAlign:'center'}}>{d > 0 ? d : ''}</Button>
+                    <Button className= {calendarButton}>{d > 0 ? d : ''}</Button>
                   </OverlayTrigger>)
             }
             return (
@@ -176,7 +171,7 @@ const Calendar = ({eventDates, eventFlyers}) => {
             );
           })}
       </Body>
-    </Frame>
+    </Container>
   );
 }
 

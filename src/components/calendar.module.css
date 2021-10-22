@@ -1,8 +1,63 @@
-body {
-    height: 100vh;
+@media screen and (min-width: 800px) {
+  .frame{
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
-  
-  .App {
-    font-family: sans-serif;
+}
+
+@media screen and (min-width: 600px) {
+  .frame{
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .frame{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .calendar-button{
+    background-color: #ffdab9;
+    color: black;
+    border-color: transparent;
+    width: 50%;
     text-align: center;
   }
+}
+
+
+@media screen and (min-width: 600px) {
+  .calendar-button{
+    background-color: #ffdab9;
+    color: black;
+    border-color: transparent;
+    width: 70%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calendar-button{
+    background-color: #ffdab9;
+    color: black;
+    border-color: transparent;
+    width: 100%;
+    text-align: center;
+  }
+}

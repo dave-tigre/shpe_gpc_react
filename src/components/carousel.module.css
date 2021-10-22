@@ -3,39 +3,39 @@
     position: relative;
     text-align: center;
     color: white;
+    opacity: 1.0 !important;
   }
 
 .carousel {
     right: 0;
     left : 0;
-    width: 100% !important;
     opacity: 0.3;
-    height: 500px;
+
 }
 
 @media screen and (min-width: 600px) {
-.overlay {
+  .overlay {
     position: absolute ;
     right :0;
     width: 100% ;
     height: 500px ;
     background-color: #001f5b;
     opacity: 0.9;
-    display: block ;
+
   }
 }
 
 @media screen and (max-width: 600px) {
   .overlay {
-      position: absolute ;
-      right :0;
-      width: 100% ;
-      height: 300px ;
-      background-color: #001f5b;
-      opacity: 0.9;
-      display: block ;
-    }
+    position: absolute ;
+    right :0;
+    width: 100% ;
+    height: 500px ;
+    background-color: #001f5b;
+    opacity: 0.9;
+
   }
+}
 
   @media screen and (min-width: 600px) {
     .header-banner {
@@ -65,32 +65,21 @@
     }
   }
 
-  @media screen and (min-width: 600px) {
-    .text {
-      position: absolute;
-      top: 0%;
-      left: 50%;
-      width: 50%;
-      transform: translate(-50%, -200%);
-      text-align: left;
-    }
-  }
-  @media screen and (max-width: 600px) {
   .text {
     position: absolute;
-    top: 0%;
+    top: 50%;
     left: 50%;
     width: 50%;
-    transform: translate(-50%, -250%);
+    transform: translate(-50%, 30%);
     text-align: left;
+    color: white;
+    opacity: 1.0 ;
   }
-}
 
 @media screen and (min-width: 600px) {
   .join-button {
     text-align: center;
     background-color: #dd3e27 !important;
-    margin: 5px !important;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 15px;
   }
@@ -100,7 +89,6 @@
   .join-button {
     text-align: center;
     background-color: #dd3e27 !important;
-    margin: 5px !important;
     font-family: "Helvetica Neue", sans-serif;
     font-size: 8px;
     size: md;

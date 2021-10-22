@@ -36,7 +36,7 @@ const EventPage = ({ data }) => {
       <Container>
         
         <h2>Upcoming Events</h2>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={4} className="g-4">
         {
           data.allMdx.nodes.map(node => {
             var eventDate = new Date(node.frontmatter.date);
@@ -84,7 +84,7 @@ const EventPage = ({ data }) => {
         }
         </Row>
         <h2>Past Events</h2>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={4} className="g-4">
         {
         data.allMdx.nodes.map(node => {
           var eventDate = new Date(node.frontmatter.date);
